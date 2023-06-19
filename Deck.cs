@@ -11,6 +11,8 @@ namespace Trio_Solitaire
     {
         private Card[] cards { get; set; } = new Card[52];
 
+        // Generate deck
+        //
         public  Deck() 
         {
             string cardSuit;
@@ -34,14 +36,14 @@ namespace Trio_Solitaire
                 for (int j = 0; j < 13; j++)
                 {
                     Card add = new Card(j, cardSuit);
-                    cards.Append<Card>(add);
+                    cards.Append(add);
                 }
 
             }
-            this.shuffle();
+            this.Shuffle();
         }
 
-        public void shuffle()
+        public void Shuffle()
         {
             Random random = new Random();
 
@@ -53,9 +55,9 @@ namespace Trio_Solitaire
                 cards[k] = temp;
             }
             Console.WriteLine(cards.ToString());
-        }
+        } 
 
-        public void deal() //TODO: return to this once form is a bit more built-up
+        public void Deal() //TODO: return to this once form is a bit more built-up
         {
 
         }
