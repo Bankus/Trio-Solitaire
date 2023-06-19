@@ -38,14 +38,24 @@ namespace Trio_Solitaire
                 }
 
             }
+            this.shuffle();
         }
 
-        public void shuffle() 
+        public void shuffle()
         {
+            Random random = new Random();
 
+            for (int k = 0; k < cards.Length; k++)
+            {
+                int randomIndexToSwap = random.Next(cards.Length);
+                Card temp = cards[k];
+                cards[randomIndexToSwap] = cards[k];
+                cards[k] = temp;
+            }
+            Console.WriteLine(cards.ToString());
         }
 
-        public void deal() 
+        public void deal() //TODO: return to this once form is a bit more built-up
         {
 
         }

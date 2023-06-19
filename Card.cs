@@ -11,7 +11,7 @@ namespace Trio_Solitaire
 {
     class Card
     {
-        private Guid cardId;
+        public Guid cardId { get; }
         private Bitmap frontFace { get; set; }
         private Bitmap backFace { get; set; }
 
@@ -23,12 +23,12 @@ namespace Trio_Solitaire
 
         private string suit { get; set; }
 
-        public Card (int cardRank, string cardSuit, bool? side) 
+        public Card (int cardRank, string cardSuit, bool side = false) 
         {
             cardId = new Guid();
             rank = cardRank;
             suit = cardSuit;
-            whichSide = side ?? whichSide;
+            whichSide = side;
             /* TODO: 
              * calculate filename for relevent card image from rank and suit
              * use to fetch front and back
